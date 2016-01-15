@@ -1,4 +1,4 @@
-var StudentModel = Backbone.Model.extend({
+var QuestionModel = Backbone.Model.extend({
   defaults: {
     "movie": {
       "title": "",

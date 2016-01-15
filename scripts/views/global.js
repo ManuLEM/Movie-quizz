@@ -4,7 +4,7 @@ var GlobalView = Backbone.View.extend({
   },
   initialize: function() {
   	this.router = new Router();
-  	this.router.history.start();
+  	Backbone.history.start();
   },
   render: function() {
   }
