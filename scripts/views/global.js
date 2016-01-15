@@ -3,8 +3,8 @@ var GlobalView = Backbone.View.extend({
   events: {
   },
   initialize: function() {
-  	this.router = new Router();
-  	Backbone.history.start();
+    this.router = new Router();
+    Backbone.history.start();
   },
   render: function() {
   }
