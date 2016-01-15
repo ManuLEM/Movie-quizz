@@ -7,6 +7,6 @@ var Router = Backbone.Router.extend({
     this.view = new HomeView();
   },
   showGame: function() {
-    console.log('play');
+    this.view = new PlayView();
   }
 });
