@@ -1,0 +1,130 @@
+body {
+    background-image: url("img/bg.png");
+    color: white;
+}
+
+h1 {
+	text-transform: uppercase;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	line-height: 1.42857143;
+	font-weight: 300;
+}
+
+.question {
+	display: block;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+.images {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.buttons {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.no {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    background: #FFFFFF;
+    font-size: .70588rem;
+    border-radius: 2px;
+    max-width: 100%;
+    line-height: 2.94118rem;
+    border: 1px solid #D6D6D6;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all .11s ease-out;
+    text-align: center;
+    padding-left: 1.47059rem;
+    padding-right: 1.47059rem;
+    min-width: 7.64706rem;
+}
+
+.yes {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    background: #FFFFFF;
+    font-size: .70588rem;
+    border-radius: 2px;
+    max-width: 100%;
+    line-height: 2.94118rem;
+    border: 1px solid #D6D6D6;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all .11s ease-out;
+    text-align: center;
+    padding-left: 1.47059rem;
+    padding-right: 1.47059rem;
+    min-width: 7.64706rem;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+/* Footer */
+
+.footer-basic-centered{
+	width: 100%;
+	text-align: center;
+	font: normal 18px sans-serif;
+
+	padding: 45px;
+	margin-top: 80px;
+}
+
+.footer-basic-centered .footer-titre{
+	color:  #ffffff;
+	font-size: 24px;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+.footer-basic-centered .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	margin: 0;
+}
+
+.footer-basic-centered .footer-links{
+	list-style: none;
+	font-weight: bold;
+	color:  #ffffff;
+	padding: 35px 0 23px;
+	margin: 0;
+}
+
+.footer-basic-centered .footer-links a{
+	display:inline-block;
+	text-decoration: none;
+	color: inherit;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+
+	.footer-basic-centered{
+		padding: 35px;
+	}
+
+	.footer-basic-centered .footer-titre{
+		font-size: 18px;
+	}
+
+	.footer-basic-centered .footer-company-name{
+		font-size: 12px;
+	}
+
+	.footer-basic-centered .footer-links{
+		font-size: 14px;
+		padding: 25px 0 20px;
+	}
+
+	.footer-basic-centered .footer-links a{
+		line-height: 1.8;
+	}
+}
