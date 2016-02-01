@@ -1,22 +1,33 @@
 var PlayView = Backbone.View.extend({
   el: '#app',
   events: {
+    'click .button': 'checkResponse',
+  },
+  checkResponse: function(event) {
+    var answer = $(event.currentTarget).html() == 'Yes';
+    if (this.question.actor.isPresent === answer) {
+      // the answer is correct, load another question
+      console.log('correct');
+      this.render();
+    }
+    else {
+      // the answer is wrong, display game over
+      console.log('game over');
+    }
   },
   initialize: function() {
-  	var that = this;
   	this.myQuestionCollection = new QuestionCollection();
   	this.myQuestionCollection.fetch({
-  		success: function(){that.render()}
+  		success: function(){this.render()}.bind(this)
   	});
   },
   render: function() {
-    var that = this;
-    var question = this.myQuestionCollection.at(0).toJSON();
-    console.log(question);
+    var index = Math.floor(Math.random() * (this.myQuestionCollection.length));
+    this.question = this.myQuestionCollection.at(index).toJSON();
     $.get('scripts/templates/playTemplate.hbs', function(data) {
       var template = Handlebars.compile( data );
 
-      that.$el.html( template(question) );
-    });
+      this.$el.html( template(this.question) );
+    }.bind(this));
   }
 });
