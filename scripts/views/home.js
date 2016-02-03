@@ -6,11 +6,10 @@ var HomeView = Backbone.View.extend({
     this.render();
   },
   render: function() {
-    var that = this;
     $.get('scripts/templates/homeTemplate.hbs', function(data) {
       var template = Handlebars.compile( data );
 
-      that.$el.html( template({test:'coucou'}) );
-    });
+      this.$el.html( template({test:'coucou'}) );
+    }.bind(this));
   }
 });
