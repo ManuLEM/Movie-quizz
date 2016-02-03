@@ -8,6 +8,7 @@ h1 {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   line-height: 1.42857143;
   font-weight: 300;
+  font-size: 25px;
 }
 
 .question {
@@ -24,6 +25,13 @@ h1 {
 }
 
 .buttons {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.mescore {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   margin-left: auto;
   margin-right: auto;
   text-align: center;

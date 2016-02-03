@@ -8,6 +8,10 @@ var PlayView = Backbone.View.extend({
     if (this.question.actor.isPresent === answer) {
       // the answer is correct, load another question
       console.log('correct');
+      this.score++;
+      var messageID = Math.floor(Math.random() * this.messageList.length);
+      this.message = this.messageList[messageID];
+
       this.render();
     }
     else {
@@ -20,10 +24,17 @@ var PlayView = Backbone.View.extend({
   	this.myQuestionCollection.fetch({
   		success: function(){this.render()}.bind(this)
   	});
+    this.score = 0;
+    this.message = "";
+    this.messageList = ["Bien joué !", "Continue !", "Aller !"];
   },
   render: function() {
-    var index = Math.floor(Math.random() * (this.myQuestionCollection.length));
+    var index = Math.floor(Math.random() * this.myQuestionCollection.length);
     this.question = this.myQuestionCollection.at(index).toJSON();
+    this.question = $.extend(this.question, {
+      score:this.score,
+      message:this.message
+    });
     $.get('scripts/templates/playTemplate.hbs', function(data) {
       var template = Handlebars.compile( data );
 
