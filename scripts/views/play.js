@@ -38,7 +38,7 @@ var PlayView = Backbone.View.extend({
     }
     
     if ($(document.activeElement).hasClass('repeat')) {
-      Backbone.history.loadUrl();
+      window.location.reload();
     }
     else {
       window.location = window.location.href.split('#')[0];

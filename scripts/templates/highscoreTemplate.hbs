@@ -1,8 +1,15 @@
-<ul>
-  {{#each players}}
-    <li>{{this.name}} - {{this.score}}</li>
-  {{/each}}
-</ul>
+<div class="highscore-block">
+  <h1>Liste des 10 meilleurs résultats :</h1>
+  <ul>
+    {{#each players}}
+      <li>
+        <div class="index">{{math @index "+" 1}}</div>
+        <div class="name">{{this.name}}</div>
+        <div class="score">{{this.score}} <span>pts</span></div>
+      </li>
+    {{/each}}
+  </ul>
+</div>
 
 
 <footer class="footer-basic-centered">

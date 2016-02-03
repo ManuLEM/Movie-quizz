@@ -10,9 +10,11 @@ var HighscoreView = Backbone.View.extend({
   render: function() {
     this.players = this.myPlayerCollection.toJSON();
     this.players.sort(function(a,b){
-      if (a.score > b.score) return 0;
-      return 1;
+      if (a.score < b.score) return 1;
+      if (a.score > b.score) return -1;
+      return 0;
     });
+    this.players.splice(10);
     $.get('scripts/templates/highscoreTemplate.hbs', function(data) {
       var template = Handlebars.compile( data );
 

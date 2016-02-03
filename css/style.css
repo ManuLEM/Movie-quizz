@@ -169,6 +169,56 @@ h1 {
   margin-right: 5px;
 }
 
+.highscore-block {
+  margin: auto;
+  background: #fff;
+  box-shadow: 0 0 15px #000;
+  max-width: 700px;
+  color: #000;
+  padding: 0 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.highscore-block ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.highscore-block ul li {
+  line-height: 40px;
+}
+
+.highscore-block ul li:nth-child(2n+2) {
+  background-color: #eee;
+}
+
+.highscore-block li div {
+  display: inline-block;
+  margin-right: -4px;
+}
+
+.highscore-block li div.index {
+  width: 15%;
+}
+
+.highscore-block li div.name {
+  width: 50%;
+  font-size: 20px;
+  text-align: left;
+}
+
+.highscore-block li div.score {
+  width: 35%;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.highscore-block li div.score span {
+  font-weight: normal;
+}
+
 /* Responsive */
 
 @media (max-width: 600px) {
