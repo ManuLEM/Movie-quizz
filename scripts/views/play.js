@@ -23,9 +23,18 @@ var PlayView = Backbone.View.extend({
   saveUserAndNext: function(event) {
     event.preventDefault();
     if ($('#username').val().length) {
-      this.currentPlayer.set('name', $('#username').val());
-      this.myPlayerCollection.add(this.currentPlayer);
-      this.currentPlayer.save();
+      var userStored = this.myPlayerCollection.findWhere({name: $('#username').val()});
+      if (userStored) {
+        if (this.currentPlayer.get('score') > userStored.get('score')) {
+          userStored.set('score', this.currentPlayer.get('score'));
+          userStored.save();
+        }
+      }
+      else {
+        this.currentPlayer.set('name', $('#username').val());
+        this.myPlayerCollection.add(this.currentPlayer);
+        this.currentPlayer.save();
+      }
     }
     
     if ($(document.activeElement).hasClass('repeat')) {
