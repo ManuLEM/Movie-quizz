@@ -8,14 +8,35 @@ h1 {
   text-transform: uppercase;
   line-height: 1.42857143;
   font-weight: 300;
-  font-size: 25px;
+  font-size: 28px;
+  text-align: center;
 }
+
+#home {
+  text-align: center;
+}
+
+#home a {
+  display: inline-block;
+  margin: auto;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 30px;
+  margin: 100px 0;
+  width: 220px;
+  border-right: 0.5px solid #fff;
+  line-height: 70px;
+}
+
+#home a:last-of-type {
+  border-right: none;
+} 
 
 .question {
   display: block;
   margin: auto;
   width: 50%;
-  text-align: center;
 }
 
 .images {
@@ -71,7 +92,7 @@ h1 {
 
 .footer-basic-centered .footer-titre{
   color:  #ffffff;
-  font-size: 24px;
+  font-size: 20px;
   text-transform: uppercase;
   margin: 0;
 }
