@@ -2,6 +2,7 @@ body {
   background-image: url("img/bg.png");
   color: white;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0;
 }
 
 h1 {
@@ -87,6 +88,7 @@ h1 {
   font: normal 18px sans-serif;
 
   padding: 45px;
+  padding-bottom: 15px;
   margin-top: 80px;
 }
 
