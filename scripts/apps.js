@@ -1,1 +1,1 @@
-var app = new GlobalView();
+window.app = new GlobalView();

@@ -11,6 +11,6 @@ var Router = Backbone.Router.extend({
     this.view = new PlayView();
   },
   showHighscores: function() {
-    console.log('highscores');
+    this.view = new HighScoreView();
   }
 });

@@ -7,8 +7,7 @@ var PlayView = Backbone.View.extend({
     var answer = $(event.currentTarget).html() == 'Yes';
     if (this.question.actor.isPresent === answer) {
       // the answer is correct, load another question
-      console.log('correct');
-      this.score++;
+      this.currentPlayer.set('score', this.currentPlayer.get('score')+1);
       var messageID = Math.floor(Math.random() * this.messageList.length);
       this.message = this.messageList[messageID];
 
@@ -16,7 +15,9 @@ var PlayView = Backbone.View.extend({
     }
     else {
       // the answer is wrong, display game over
-      console.log('game over');
+      this.currentPlayer.set('name', 'Manuel');
+      this.myPlayerCollection.add(this.currentPlayer);
+      this.currentPlayer.save();
     }
   },
   initialize: function() {
@@ -24,15 +25,17 @@ var PlayView = Backbone.View.extend({
   	this.myQuestionCollection.fetch({
   		success: function(){this.render()}.bind(this)
   	});
-    this.score = 0;
+    this.currentPlayer = new PlayerModel();
     this.message = "";
     this.messageList = ["Bien joué !", "Continue !", "Aller !"];
+    this.myPlayerCollection = new PlayerCollection();
+    this.myPlayerCollection.fetch();
   },
   render: function() {
     var index = Math.floor(Math.random() * this.myQuestionCollection.length);
     this.question = this.myQuestionCollection.at(index).toJSON();
     this.question = $.extend(this.question, {
-      score:this.score,
+      score:this.currentPlayer.get('score'),
       message:this.message
     });
     $.get('scripts/templates/playTemplate.hbs', function(data) {
